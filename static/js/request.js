@@ -3,7 +3,7 @@ async function call(endpoint, method = "GET", data = null, params = null) {
         return false;
     }
 
-    let url = `http://localhost:8000/${endpoint}`;
+    let url = `http://34.123.44.35:8000/${endpoint}`;
     // let url = `https://api.sorteos.proy.iteraciona.com/fotos/${endpoint}`
     // Añade parámetros a la URL si se proporcionan
     if (params) {
