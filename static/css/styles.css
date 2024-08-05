@@ -1,0 +1,44 @@
+@media (min-width: 640px) {
+    #elementos-checkboxes {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+    }
+}
+
+@media (max-width: 639px) {
+    #elementos-checkboxes {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    }
+}
+
+#foto-section {
+    position: relative; /* Ensure relative positioning for absolute children */
+    overflow: hidden; /* Hide overflow to prevent scrolling */
+}
+
+#photo {
+    max-width: 100%; /* Ensure photo fits container */
+    max-height: 100%; /* Ensure photo fits container */
+    position: absolute; /* Position absolute for fixed placement */
+    top: 50%; /* Position at the center vertically */
+    left: 50%; /* Position at the center horizontally */
+    transform: translate(-50%, -50%); /* Center the photo */
+}
+
+
+#color-range::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, green, yellow, red);
+    height: 8px;
+}
+#color-range::-moz-range-track {
+    background: linear-gradient(to right, green, yellow, red);
+    height: 8px;
+}
+#color-range::-ms-track {
+    background: linear-gradient(to right, green, yellow, red);
+    height: 8px;
+    border: none;
+    color: transparent;
+}
+.scroll-fixed {
+    overflow: hidden;
+}

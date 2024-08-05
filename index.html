@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Fotos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white flex items-center justify-center h-screen">
+<div class="bg-white rounded-lg p-6 max-w-sm w-full text-center h-full">
+
+    <!-- Foto Section -->
+    <h2 class="text-lg font-bold mb-4">Análisis de Fotos</h2>
+    <div class="h-full pb-24">
+        <div id="foto-section" class="overflow-hidden h-full pb-4">
+            <div class="h-full flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg">
+                <img id="photo" class="max-w-full max-h-full" src="" alt="Foto para analizar">
+            </div>
+            <input type="file" accept="image/*" id="file-input" class="hidden bg-blue-500 text-white px-4 py-2 rounded-md" onchange="previewPhoto(event)">
+        </div>
+        <button id="take-photo" class="bg-blue-500 text-white px-4 py-2 rounded-md" onclick="openFilePicker()">Seleccionar Foto</button>
+    </div>
+
+    <!-- Información Section -->
+    <div id="informacion-section" class="section mb-6 hidden">
+        <div class="border-t border-gray-300 my-4"></div>
+        <h2 class="text-lg font-bold mb-4 text-center">Información de la Foto</h2>
+
+        <!-- Canal Dropdown -->
+        <label for="canal" class="block mb-2">Canal</label>
+        <select id="canal" class="block w-full p-2 mb-4 border border-gray-300 rounded-md">
+            <option value="tienda">Tienda</option>
+            <option value="supermercado">Supermercado</option>
+            <option value="bodega">Bodega</option>
+        </select>
+
+        <!-- Tienda Textfield -->
+        <label for="tienda" class="block mb-2">Tienda</label>
+        <input type="text" id="tienda" class="block w-full p-2 mb-4 border border-gray-300 rounded-md">
+
+        <!-- Fabricante Textfield -->
+        <label for="fabricante" class="block mb-2">Fabricante</label>
+        <input type="text" id="fabricante" class="block w-full p-2 mb-4 border border-gray-300 rounded-md">
+
+        <!-- Tipo de elementos Checkboxes -->
+        <label class="block mb-2">Tipo de elementos</label>
+        <div id="elementos-checkboxes" class="mb-4 grid grid-cols-2 gap-4">
+            <label class="block mb-2"><input type="checkbox" class="mr-2" checked>Galletas</label>
+            <label class="block mb-2"><input type="checkbox" class="mr-2" checked>Papas Fritas</label>
+            <label class="block mb-2"><input type="checkbox" class="mr-2" checked>Chifles</label>
+            <label class="block mb-2"><input type="checkbox" class="mr-2" checked>Chocolates</label>
+            <label class="block mb-2"><input type="checkbox" class="mr-2" checked>Dulces</label>
+            <label class="block mb-2"><input type="checkbox" class="mr-2" checked>Refrescos</label>
+            <label class="block mb-2"><input type="checkbox" class="mr-2" checked>Gaseosas</label>
+        </div>
+    </div>
+
+    <!-- Análisis de la Foto Section -->
+    <div id="analisis-section" class="section mb-6 hidden">
+        <div class="border-t border-gray-300 my-4"></div>
+        <h2 class="text-lg font-bold mb-4">Análisis de la Foto</h2>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="text-left">Puntaje de la Foto</div>
+            <div class="text-right">
+                <input type="range" id="color-range" class="w-full" min="0" max="100" value="50" oninput="updateColor()">
+                <input type="color" id="color-picker" class="w-full p-2 border border-gray-300 rounded-md hidden">
+            </div>
+            <div class="text-left">Calidad de la Foto</div>
+            <div class="text-right">
+                <input type="range" id="quality-range" class="w-full" min="0" max="100" value="50">
+            </div>
+            <div class="text-left">Marcas o Productos presentes</div>
+            <div class="text-right">
+                <input type="range" id="products-range" class="w-full" min="0" max="100" value="50">
+            </div>
+            <div class="text-left">Area de Foto</div>
+            <div class="text-right">
+                <input type="text" id="area-text" class="w-full p-2 border border-gray-300 rounded-md" readonly>
+            </div>
+            <div class="text-left">Geo-Referenciación</div>
+            <div class="text-right">
+                <a id="geo-link" href="#" target="_blank" class="text-blue-500 underline">Ver en Google Maps</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Descripción Section -->
+    <div id="descripcion-section" class="section mb-6 hidden">
+        <div class="border-t border-gray-300 my-4"></div>
+        <h2 class="text-lg font-bold mb-4">Descripción</h2>
+        <label for="descripcion" class="block mb-2">Descripción de la imagen</label>
+        <textarea id="descripcion" class="block w-full p-2 border border-gray-300 rounded-md" rows="3"></textarea>
+    </div>
+
+    <div id="startover-section" class="section mb-6 hidden">
+        <!-- Start Over Button -->
+        <button id="start-over-button" class="bg-red-500 text-white px-4 py-2 rounded-md" onclick="resetApp()">Empezar de Nuevo</button>
+    </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

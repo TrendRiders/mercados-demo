@@ -1,0 +1,86 @@
+body {
+    font-family: "Roboto", sans-serif;
+    color: #001647;
+}
+
+.shadow-right {
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.05); /* Adjust values for desired shadow effect */
+}
+
+.green {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+}
+
+.orange {
+    background-color: #ff9f22;
+    color: #FFFFFF;
+}
+
+.red {
+    background-color: #F44336;
+    color: #FFFFFF;
+}
+
+.white {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.top-title {
+    color: #001647;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Customize shadow color and size */
+}
+
+.soft-background {
+    background-color: #001647;
+    color: #F4F4F4;
+}
+
+.pine-boton {
+    background-color: #004587;
+    color: #F4F4F4;
+}
+
+.almost-white {
+    background-color: #F2F2F0;
+    color: #012611;
+}
+
+.title {
+    color: #001647;
+}
+
+.background {
+    background-color: #FFFFFF;
+    color: #001647;
+}
+
+.description {
+    background-color: #F4F4F4;
+    color: #001647;
+    min-height: 6rem;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    max-width: 70%;
+    max-height: 50px; /* Ajusta este valor según sea necesario */
+    width: auto;
+    height: auto;
+}
+
+
+.results-container {
+    width: 100%;
+    background-image: url('/static/img/results-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
